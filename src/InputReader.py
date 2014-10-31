@@ -1,15 +1,10 @@
-def getPermutation(inputFunction):
-    permutation = inputFunction()
+def promptForNumber():
+    return raw_input("Enter a number")
 
-    if permutation.isdigit() == False:
-        return -1
+def promptForPermutation():
+    return raw_input("Enter the permutation you wish to find")
 
-    if permutation == '0':
-        return -1
-
-    return int(permutation)
-    
-def getNumbers(inputFunction):
+def getNumbers(inputFunction = promptForNumber):
     numbers = []
 
     while True:
@@ -27,4 +22,15 @@ def getNumbers(inputFunction):
             except ValueError:
                 print "You must enter a numerical value..."
 
+
+def getPermutation(inputFunction = promptForPermutation):
+    permutation = inputFunction()
+
+    if permutation.isdigit() == False:
+        return -1
+
+    if permutation == '0':
+        return -1
+
+    return int(permutation)
 
