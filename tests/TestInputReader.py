@@ -1,6 +1,7 @@
-from nose.tools import *
 import unittest
+from nose.tools import *
 from mock import Mock
+
 import InputReader
 
 class TestInputReader(unittest.TestCase):
