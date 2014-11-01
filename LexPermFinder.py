@@ -1,0 +1,2 @@
+class LexPerm(object):
+
