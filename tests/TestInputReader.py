@@ -9,28 +9,32 @@ class TestInputReader(unittest.TestCase):
     # tests for getPermutation.
 
     def testIntPermutationsShouldBeAccepted(self):
-        permutation = InputReader.getPermutation(lambda: "5")
+        permutation = InputReader.getPermutation(lambda: '5')
         expected = 5
         self.assertEqual(permutation, expected)
 
     def testFloatPermutationsShouldNotBeAccepted(self):
-        permutation = InputReader.getPermutation(lambda: "5.5")
-        expected = -1
+        inputFunction = Mock(side_effect = ['5.5', '7'])
+        permutation = InputReader.getPermutation(inputFunction)
+        expected = 7
         self.assertEqual(permutation, expected)
 
     def testStringPermutationsShouldNotBeAccepted(self):
-        permutation = InputReader.getPermutation(lambda: "wrong")
-        expected = -1
+        inputFunction = Mock(side_effect = ['r', '7'])
+        permutation = InputReader.getPermutation(inputFunction)
+        expected = 7
         self.assertEqual(permutation, expected)
 
     def testZeroPermutationShouldNotBeAccepted(self):
-        permutation = InputReader.getPermutation(lambda: "0")
-        expected = -1
+        inputFunction = Mock(side_effect = ['0', '7'])
+        permutation = InputReader.getPermutation(inputFunction)
+        expected = 7
         self.assertEqual(permutation, expected)
 
     def testNegativePermutationShouldNotBeAccepted(self):    
-        permutation = InputReader.getPermutation(lambda: "-10")
-        expected = -1
+        inputFunction = Mock(side_effect = ['-3', '7'])
+        permutation = InputReader.getPermutation(inputFunction)
+        expected = 7
         self.assertEqual(permutation, expected)
 
     # tests for getNumbers.

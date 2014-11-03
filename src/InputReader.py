@@ -1,12 +1,13 @@
 def promptForNumber():
-    return raw_input("Enter a number")
+    return raw_input("Enter a number: ")
 
 def promptForPermutation():
-    return raw_input("Enter the permutation you wish to find")
+    return raw_input("Enter the permutation you wish to find: ")
 
 def getNumbers(inputFunction = promptForNumber):
     numbers = []
-
+    print ("Enter the numbers you wish to find " 
+           "a permutation of, or 'q' to finish.")
     while True:
         number = inputFunction()
 
@@ -24,13 +25,10 @@ def getNumbers(inputFunction = promptForNumber):
 
 
 def getPermutation(inputFunction = promptForPermutation):
-    permutation = inputFunction()
 
-    if permutation.isdigit() == False:
-        return -1
-
-    if permutation == '0':
-        return -1
-
-    return int(permutation)
-
+    while True:
+        permutation = inputFunction()
+        if permutation.isdigit() == False or int(permutation) <= 0:
+            print "You must enter a positive integer value"
+            continue
+        return int(permutation)

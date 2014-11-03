@@ -6,14 +6,14 @@ except ImportError:
 config = {
         'description': 'Lexographic Permutation Finder',
         'author': 'Will ST',
-        'url': 'URL to get it at.',
-        'download_url': 'Where to download it.',
+        'url': '',
+        'download_url': '',
         'author_email': 'willst.willst@gmail.com',
         'version': '0.1',
-        'install_requires': ['nose'],
-        'packages': ['NAME'],
+        'install_requires': [],
+        'packages': ['src'],
         'scripts': [],
-        'name': 'projectname'
+        'name': 'Lexographic Permutation Finder'
         }
 
 setup(**config)
