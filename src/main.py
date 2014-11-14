@@ -8,5 +8,6 @@ try:
 except ValueError as e:
     print e.value
 
-print "Permutation number %i is:" % permutation
+print "\nPermutation number %i is:\n" % permutation
 print lexPermFinder.getNthPermutation(permutation)
+print ""

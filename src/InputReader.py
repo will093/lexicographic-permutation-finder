@@ -2,12 +2,12 @@ def promptForNumber():
     return raw_input("Enter a number: ")
 
 def promptForPermutation():
-    return raw_input("Enter the permutation you wish to find: ")
+    return raw_input("\nEnter the permutation you wish to find: ")
 
 def getNumbers(inputFunction = promptForNumber):
     numbers = []
-    print ("Enter the numbers you wish to find " 
-           "a permutation of, or 'q' to finish.")
+    print ("\nEnter the numbers you wish to find " 
+           "a permutation of, or 'q' to finish.\n")
     while True:
         number = inputFunction()
 
